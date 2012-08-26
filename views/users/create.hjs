@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>{{ title }}</title>
+		
+	    <script src="/javascripts/jquery.js"></script>
+	    <script src="/javascripts/underscore.js"></script>
+	    <script src="/javascripts/backbone.js"></script>
+	</head>
+	<body>
+		<h1>{{ title }}</h1>
+
+		<script>
+			$(function () {
+				$("#submit").click(function () {
+					alert($("#name").val())
+					var user = {
+						name : $("#name").val(),
+						login : $("#login").val(),
+						password : $("#password").val()
+					}
+
+					$.ajax({
+						url : '/user',
+						type: 'post',
+						error: function(a, b, c) {
+							console.log(a)
+							alert(b)
+							alert(c)
+						},
+						success: function(data, status, xhr) {
+							alert(data)
+							alert(status)
+						},
+						data: user
+					})	
+				})
+			})
+		</script>
+
+		<ul>
+			<li>
+				<label for="name">
+					Name: <input id="name" name="name" />
+				</label>
+			</li>
+			<li>
+				<label for="login">
+					Login: <input id="login" name="login" />
+				</label>
+			</li>
+			<li>
+				<label for="password">
+					Password: <input id="password" name="password" />
+				</label>
+			</li>
+			<li>
+				<input id="submit" type="button">
+			</li>
+		</ul>
+	</body>
+</html>

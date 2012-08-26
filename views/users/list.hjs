@@ -1,0 +1,7 @@
+    <ul>
+      {{#users}}
+        <li>{{name}}:{{login}}</li>
+      {{/users}}
+    </ul>
+
+<a href="/user/add">Adicionar um usuário</a>

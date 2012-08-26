@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>{{ title }}</title>
+		
+	    <script src="/javascripts/jquery.js"></script>
+	    <script src="/javascripts/underscore.js"></script>
+	    <script src="/javascripts/backbone.js"></script>
+	</head>
+	<body>
+		<h1>{{ title }}</h1>
+
+		<form action="/user" method="POST">
+			<ul>
+				<li>
+					<label for="name">
+						Name: <input name="name" />
+					</label>
+				</li>
+				<li>
+					<label for="login">
+						Login: <input name="login" />
+					</label>
+				</li>
+				<li>
+					<label for="password">
+						Password: <input name="password" />
+					</label>
+				</li>
+				<li>
+					<input type="submit">
+				</li>
+			</ul>
+		</form>
+	</body>
+</html>
